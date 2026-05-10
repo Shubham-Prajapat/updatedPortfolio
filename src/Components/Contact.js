@@ -1,21 +1,51 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_1ryfy3t",
+        "template_jgtno3u",
+        form.current,
+        "dUZ_oQaiXV1CKn_Gc"
+      )
+      .then(
+        () => {
+          alert("Message Sent Successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Failed To Send Message");
+        }
+      );
+  };
+
   return (
     <section id="contact" className="contact-section">
       <div className="contact-container">
 
         {/* Left Content */}
         <div className="contact-content">
-          <span className="section-subtitle">Get In Touch</span>
+
+          <span className="section-subtitle">
+            Get In Touch
+          </span>
 
           <h2 className="section-title">
             Contact Me
           </h2>
 
           <p className="contact-text">
-            I’m available for freelance work, internships, and full-time
-            opportunities. Feel free to contact me anytime.
+            I’m available for freelance work,
+            internships, and full-time opportunities.
+            Feel free to contact me anytime.
           </p>
 
           <div className="contact-info">
@@ -42,11 +72,16 @@ const Contact = () => {
         {/* Contact Form */}
         <div className="contact-form-box">
 
-          <form className="contact-form">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="contact-form"
+          >
 
             <div className="input-group">
               <input
                 type="text"
+                name="from_name"
                 placeholder="Your Name"
                 required
               />
@@ -55,6 +90,7 @@ const Contact = () => {
             <div className="input-group">
               <input
                 type="email"
+                name="from_email"
                 placeholder="Your Email"
                 required
               />
@@ -63,6 +99,7 @@ const Contact = () => {
             <div className="input-group">
               <input
                 type="text"
+                name="subject"
                 placeholder="Subject"
                 required
               />
@@ -71,12 +108,16 @@ const Contact = () => {
             <div className="input-group">
               <textarea
                 rows="6"
+                name="message"
                 placeholder="Your Message"
                 required
               ></textarea>
             </div>
 
-            <button type="submit" className="contact-btn">
+            <button
+              type="submit"
+              className="contact-btn"
+            >
               Send Message
             </button>
 
