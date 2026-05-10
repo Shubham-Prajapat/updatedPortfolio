@@ -1,27 +1,123 @@
-import React from 'react'
-import aboutImg from '../assest/Shubham.jpg'
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Code2,
+  Globe,
+  Sparkles,
+  BadgeCheck,
+} from "lucide-react";
+
+import aboutImg from "../assets/Shubham.jpg";
+import { useNavigate } from "react-router-dom";
+
 const About = () => {
+
+  const navigate = useNavigate()
+
+  const Contactbtn = () =>{
+    navigate("/contact")
+  }
+
   return (
-    <div className='about-main'>
-        <div className='about-cntainer container'>
-          <div className='about-box'>
-              <div className='content-box'>
-                 <h2 className='title-heading'>About Me</h2>
-                 <p className='about-des'>
-                  I'm a Shopify and Frontend Developer with 2 Years of hands-on experience in building 
-                  customized, conversion-focused eCommerce Stores. I specialize in Shopify theme development, Liquid
-                  customization, and responsive user interfaces using HTML, CSS, Javascript, and React Passionate about creating
-                  pixel-perfect storefronts, I've worked on multiple client projects across different industries. I thrive in clean , maintainable code and enjoy solving UI/UX chanllenges that improve store performance and customer experience.
+    <section className="luxury-about-section" id="about">
+      
+      {/* Background Glow */}
+      <div className="about-blur blur-one"></div>
+      <div className="about-blur blur-two"></div>
 
-                 </p>
-              </div>
-              <div className='image-box'>
-                <img src={aboutImg} alt='about_image' className='about__image'/>
-              </div>
+      <div className="about-container">
+
+        {/* LEFT IMAGE */}
+        <motion.div
+          className="about-image-wrapper"
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="image-card">
+            <img src={aboutImg} alt="Shubham Prajapat" />
+
+            {/* Floating Badge */}
+            <div className="floating-badge">
+              <BadgeCheck size={18} />
+              <span>3+ Years Experience</span>
+            </div>
           </div>
-        </div>
-    </div>
-  )
-}
+        </motion.div>
 
-export default About
+        {/* RIGHT CONTENT */}
+        <motion.div
+          className="about-content"
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <span className="section-subtitle">
+            ABOUT ME
+          </span>
+
+          <h2 className="about-title">
+            Building Premium Digital
+            <span> Experiences.</span>
+          </h2>
+
+          <p className="about-description">
+            Hi, I’m <strong>Shubham Prajapat</strong> — a passionate
+            Frontend Developer with 3 years of experience creating
+            modern, responsive and high-performance websites.
+          </p>
+
+          <p className="about-description">
+            I specialize in React JS, Shopify and modern frontend
+            technologies to build elegant user interfaces with smooth
+            experiences and clean code architecture.
+          </p>
+
+          {/* Feature Cards */}
+          <div className="about-feature-grid">
+
+            <div className="feature-card">
+              <Code2 size={26} />
+              <h4>Clean Code</h4>
+              <p>
+                Modern scalable frontend architecture with optimized performance.
+              </p>
+            </div>
+
+            <div className="feature-card">
+              <Globe size={26} />
+              <h4>Responsive Design</h4>
+              <p>
+                Pixel perfect websites for desktop, tablet and mobile devices.
+              </p>
+            </div>
+
+            <div className="feature-card">
+              <Sparkles size={26} />
+              <h4>Luxury UI/UX</h4>
+              <p>
+                Premium interfaces with smooth animations and modern aesthetics.
+              </p>
+            </div>
+
+          </div>
+
+          {/* Buttons */}
+          <div className="about-buttons">
+            <button className="primary-about-btn">
+              Download CV
+            </button>
+
+            <button className="secondary-about-btn" onClick={Contactbtn}>
+              Contact Me
+            </button>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default About;

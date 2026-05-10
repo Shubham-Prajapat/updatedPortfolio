@@ -1,74 +1,67 @@
-import React from 'react'
-import myimg from '../assest/shubhbg-remove.png'
+import React from "react";
+import { motion } from "framer-motion";
+import myimg from "../assets/shubhbg-remove.png";
+import { useNavigate } from "react-router-dom";
+
 const ImageBanner = () => {
+
+  const navigate = useNavigate();
+
+  const Viewproject = () =>{
+    navigate("/projects")
+  }
   return (
-    <div className='image-banner'>
-       <div className='image-banner-container'>
-            <div className='image-column'>
-              <img src={myimg} alt='banner' />
-            </div>
-            <div className='content-column'>
-                <h1 className='title-heading'>Mr. Shubham Prajapat</h1>
-                <p>Web Developer</p>
-                <span className='dev-lang'>Shopify, React Js</span>
-            </div>
-       </div>
-    </div>
-  )
-}
+    <section className="luxury-banner">
+      <div className="overlay"></div>
+
+      <div className="banner-container">
+        {/* Left Content */}
+        <motion.div
+          className="content-section"
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <span className="intro-text">WELCOME TO MY PORTFOLIO</span>
+
+          <h1 className="main-heading">
+            Shubham <span>Prajapat</span>
+          </h1>
+
+          <h2 className="role-text">Frontend & Shopify Developer</h2>
+
+          <p className="description">
+            I create modern, premium and high-performing web experiences using
+            React JS, Shopify and advanced frontend technologies.
+          </p>
+
+          <div className="skill-tags">
+            <span>React JS</span>
+            <span>Shopify</span>
+            <span>JavaScript</span>
+            <span>UI Design</span>
+          </div>
+
+          <div className="banner-buttons">
+            <button className="primary-btn">Hire Me</button>
+            <button className="secondary-btn" onClick={Viewproject}>View Projects</button>
+          </div>
+        </motion.div>
+
+        {/* Right Image */}
+        <motion.div
+          className="image-section"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2 }}
+        >
+          <div className="image-box">
+            <img src={myimg} alt="Shubham Prajapat" />
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
 
 export default ImageBanner;
-
-
-// Dyanamic code for image banner
-
-// import React from 'react';
-// import { motion } from 'framer-motion';
-
-// const ImageBanner = ({ image, name, role, skills }) => {
-//   return (
-//     <div className='image-banner'>
-//       <div className='image-banner-container'>
-//         <motion.div 
-//           className='image-column'
-//           initial={{ x: -100, opacity: 0 }}
-//           animate={{ x: 0, opacity: 1 }}
-//           transition={{ duration: 1 }}
-//         >
-//           <img src={image} alt='banner' className='banner-image' />
-//         </motion.div>
-
-//         <motion.div 
-//           className='content-column'
-//           initial={{ x: 100, opacity: 0 }}
-//           animate={{ x: 0, opacity: 1 }}
-//           transition={{ duration: 1, delay: 0.3 }}
-//         >
-//           <h1 className='title-heading'>{name}</h1>
-//           <p>{role}</p>
-//           <span className='dev-lang'>{skills}</span>
-//         </motion.div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ImageBanner;
-
-
-// import React from 'react';
-// import ImageBanner from './ImageBanner';
-// import myimg from '../assest/Shubh11.png';
-
-// const HomePage = () => {
-//   return (
-//     <ImageBanner 
-//       image={myimg} 
-//       name="Mr. Shubham Prajapat" 
-//       role="Web Developer" 
-//       skills="Shopify, React JS"
-//     />
-//   );
-// };
-
-// export default HomePage;
