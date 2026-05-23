@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
 import {
   Menu,
   X,
@@ -33,13 +34,13 @@ const Navbar = () => {
   }, [menuOpen]);
 
   const navigate = useNavigate()
-  const Hire = () =>{
+  const Hire = () => {
     navigate("/contact")
   }
 
-  const Talk = () =>{
-    navigate("/contact")
-  }
+  // const Talk = () =>{
+  //   navigate("/contact")
+  // }
 
   return (
     <>
@@ -171,10 +172,19 @@ const Navbar = () => {
         </ul>
 
         {/* Bottom */}
-        <div className="drawer-bottom" onClick={Talk}>
-          <button>Let’s Talk</button>
-        </div>
-
+        {/* <NavLink to="https://wa.me/7566860580" className="drawer-bottom" target="_blank" rel="noopener noreferrer">
+          <button>   
+            <span className="whatsapp-btn"><FaWhatsapp /> </span>Let’s Talk Whatsapp</button>
+        </NavLink> */}
+        <a
+          href="https://wa.me/917566860580?text=Hello%20Shubham%20👋%0A%0AI%20visited%20your%20portfolio%20website%20and%20really%20liked%20your%20work.%0AThank%20you%20for%20connecting%20with%20me.%20I%20would%20like%20to%20discuss%20a%20project%20with%20you."
+          target="_blank"
+          rel="noreferrer"
+          className="whatsapp-btn"
+        >
+          <FaWhatsapp className="whatsapp-icon" />
+          Let’s Talk
+        </a>
       </div>
     </>
   );

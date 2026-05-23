@@ -2888,7 +2888,44 @@ img.logo {
 html {
   scroll-behavior: smooth;
 }
+.whatsapp-btn {
+  width: 100%;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 16px;
+
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.06);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(20px);
+
+  color: white;
+  text-decoration: none;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  transition: 0.4s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-5px);
+  border-color: #25d366;
+}
+
+/* GREEN WHATSAPP ICON */
+
+.whatsapp-icon {
+  font-size: 24px;
+  color: #25D366;
+}
 @media screen and (min-width: 768px) and (max-width: 1024px){
   .contact-container{
      grid-template-columns: 1fr;
