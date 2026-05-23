@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   Menu,
   X,
@@ -31,6 +31,15 @@ const Navbar = () => {
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
+
+  const navigate = useNavigate()
+  const Hire = () =>{
+    navigate("/contact")
+  }
+
+  const Talk = () =>{
+    navigate("/contact")
+  }
 
   return (
     <>
@@ -83,7 +92,7 @@ const Navbar = () => {
           </ul>
 
           {/* CTA Button */}
-          <div className="desktop-btn">
+          <div className="desktop-btn" onClick={Hire}>
             <button>Hire Me</button>
           </div>
 
@@ -162,7 +171,7 @@ const Navbar = () => {
         </ul>
 
         {/* Bottom */}
-        <div className="drawer-bottom">
+        <div className="drawer-bottom" onClick={Talk}>
           <button>Let’s Talk</button>
         </div>
 

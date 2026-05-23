@@ -8,8 +8,8 @@ import {
 } from "lucide-react";
 
 import aboutImg from "../assets/Shubham.jpg";
-import { useNavigate } from "react-router-dom";
-
+import { NavLink, useNavigate } from "react-router-dom";
+import resume from  '../assets/Resume.pdf'
 const About = () => {
 
   const navigate = useNavigate()
@@ -17,6 +17,7 @@ const About = () => {
   const Contactbtn = () =>{
     navigate("/contact")
   }
+
 
   return (
     <section className="luxury-about-section" id="about">
@@ -106,9 +107,9 @@ const About = () => {
 
           {/* Buttons */}
           <div className="about-buttons">
-            <button className="primary-about-btn">
+            <NavLink to={resume} className="primary-about-btn" target="_balnk">
               Download CV
-            </button>
+            </NavLink>
 
             <button className="secondary-about-btn" onClick={Contactbtn}>
               Contact Me

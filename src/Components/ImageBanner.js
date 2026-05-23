@@ -10,6 +10,9 @@ const ImageBanner = () => {
   const Viewproject = () =>{
     navigate("/projects")
   }
+  const Hire = () =>{
+    navigate("/contact")
+  }
   return (
     <section className="luxury-banner">
       <div className="overlay"></div>
@@ -39,11 +42,11 @@ const ImageBanner = () => {
             <span>React JS</span>
             <span>Shopify</span>
             <span>JavaScript</span>
-            <span>UI Design</span>
+            <span>UI / UX</span>
           </div>
 
           <div className="banner-buttons">
-            <button className="primary-btn">Hire Me</button>
+            <button className="primary-btn" onClick={ Hire}>Hire Me</button>
             <button className="secondary-btn" onClick={Viewproject}>View Projects</button>
           </div>
         </motion.div>

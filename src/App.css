@@ -2813,7 +2813,9 @@ img.logo {
   color: #94a3b8;
   font-size: 15px;
 }
-
+.primary-about-btn{
+  text-decoration: none;
+}
 /* SCROLL BUTTON */
 
 .scroll-btn {
@@ -2886,3 +2888,9 @@ img.logo {
 html {
   scroll-behavior: smooth;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  .contact-container{
+     grid-template-columns: 1fr;
+  }
+}  
