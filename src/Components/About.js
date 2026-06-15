@@ -9,7 +9,7 @@ import {
 
 import aboutImg from "../assets/Shubham.jpg";
 import { NavLink, useNavigate } from "react-router-dom";
-import resume from  '../assets/Resume.pdf'
+import resume from  '../assets/Updatedresume.pdf'
 const About = () => {
 
   const navigate = useNavigate()

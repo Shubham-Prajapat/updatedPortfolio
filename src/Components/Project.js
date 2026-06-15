@@ -11,7 +11,7 @@ import Chaywala from "../assets/Chaylogoo.png";
 import CrudApp from "../assets/pc4.jpg";
 import Employee from "../assets/pc3.jpg";
 import Restaurant from "../assets/1.png";
-
+import Ecommerce from "../assets/ecommerce.png"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -187,6 +187,13 @@ const data = [
     name: "Restaurant Management",
     url: "https://webshubh-restrourant.netlify.app",
     img: Restaurant,
+  },
+  
+  {
+    id: 6,
+    name: "Ecommerce Website",
+    url: "https://ecommerceshubhweb.netlify.app/",
+    img: Ecommerce,
   },
 ];
 
