@@ -42,7 +42,9 @@ const ImageBanner = () => {
             <span>React JS</span>
             <span>Shopify</span>
             <span>JavaScript</span>
-            <span>UI / UX</span>
+            <span>UI Design</span>
+            <span>Responsive Design</span>
+            <span>Frontend Development</span>
           </div>
 
           <div className="banner-buttons">
