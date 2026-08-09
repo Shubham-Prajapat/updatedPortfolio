@@ -6,22 +6,22 @@ import {
   Sparkles,
   BadgeCheck,
 } from "lucide-react";
-
-import aboutImg from "../assets/Shubham.jpg";
+import { SiShopify } from "react-icons/si";
+import aboutImg from "../assets/portfolio-img.jpeg";
 import { NavLink, useNavigate } from "react-router-dom";
-import resume from  '../assets/resumefrontend.pdf'
+import resume from '../assets/resumefrontend.pdf'
 const About = () => {
 
   const navigate = useNavigate()
 
-  const Contactbtn = () =>{
+  const Contactbtn = () => {
     navigate("/contact")
   }
 
 
   return (
     <section className="luxury-about-section" id="about">
-      
+
       {/* Background Glow */}
       <div className="about-blur blur-one"></div>
       <div className="about-blur blur-two"></div>
@@ -65,15 +65,11 @@ const About = () => {
           </h2>
 
           <p className="about-description">
-            Hi, I’m <strong>Shubham Prajapat</strong> — a passionate
-            Frontend Developer with 3 years of experience creating
-            modern, responsive and high-performance websites.
-          </p>
+            Hi, I’m Shubham Prajapat — a Frontend Developer with 3 years of professional experience in building modern, responsive, and user-friendly web experiences.
 
-          <p className="about-description">
-            I specialize in React JS, Shopify and modern frontend
-            technologies to build elegant user interfaces with smooth
-            experiences and clean code architecture.
+            I’m currently working as a Shopify Developer, specializing in responsive storefronts, theme customization, UI implementation, and user-focused experiences. Before Shopify, I gained hands-on professional experience with React JS, building frontend interfaces and strengthening my understanding of modern frontend development.
+
+            My skills include HTML, CSS, JavaScript, React JS, Shopify, Liquid, Tailwind CSS, Bootstrap, Redux, and modern frontend tools. I’m passionate about solving UI challenges, learning new technologies, and continuously growing as a developer.
           </p>
 
           {/* Feature Cards */}
@@ -97,13 +93,21 @@ const About = () => {
 
             <div className="feature-card">
               <Sparkles size={26} />
-              <h4>Luxury UI</h4>
+              <h4>Modern UI</h4>
               <p>
-                Premium interfaces with smooth animations and modern aesthetics.
+                Clean and engaging interfaces focused on usability and user experience.
               </p>
             </div>
 
+            <div className="feature-card">
+              <SiShopify size={28} />
+              <h4>Shopify Development</h4>
+              <p>
+                Responsive Shopify storefronts, theme customization and UI implementation.
+              </p>
+            </div>
           </div>
+
 
           {/* Buttons */}
           <div className="about-buttons">

@@ -11,21 +11,24 @@ import Chaywala from "../assets/Chaylogoo.png";
 import CrudApp from "../assets/pc4.jpg";
 import Employee from "../assets/pc3.jpg";
 import Restaurant from "../assets/1.png";
-import Ecommerce from "../assets/ecommerce.png"
+import Ecommerce from "../assets/ecommerce.png";
+import typingtext from "../assets/typing-speed-text.png";
+import SPBricks from "../assets/spbricks.png";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Project = () => {
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 700,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,
-    arrows: false,
+    arrows: true,
     centerMode: true,
     centerPadding: "0px",
 
@@ -123,8 +126,7 @@ const Project = () => {
                   <h3>{project.name}</h3>
 
                   <p>
-                    Modern responsive website with premium UI,
-                    smooth experience and optimized performance.
+                    {project.description}
                   </p>
 
                   <a
@@ -157,6 +159,9 @@ const data = [
   {
     id: 1,
     name: "Bull EyeTrade",
+    category: "Web Development",
+    description:
+      "A modern trading platform website with a clean interface and responsive user experience.",
     url: "https://bulleyetrade.com",
     img: BullEye,
   },
@@ -164,6 +169,9 @@ const data = [
   {
     id: 2,
     name: "The Chay Wala",
+    category: "Business Website",
+    description:
+      "A modern tea brand website designed with an engaging UI and responsive layout.",
     url: "https://thechaywala.com/",
     img: Chaywala,
   },
@@ -171,6 +179,9 @@ const data = [
   {
     id: 3,
     name: "CRUD App",
+    category: "React Application",
+    description:
+      "A React-based CRUD application for creating, updating, viewing and managing data.",
     url: "https://webshubh-crud.netlify.app/",
     img: CrudApp,
   },
@@ -178,6 +189,9 @@ const data = [
   {
     id: 4,
     name: "Employee Management",
+    category: "Full Stack Application",
+    description:
+      "An employee management system for efficiently managing employee records and data.",
     url: "https://fullstack-employee-management.netlify.app/",
     img: Employee,
   },
@@ -185,15 +199,40 @@ const data = [
   {
     id: 5,
     name: "Restaurant Management",
+    category: "Web Application",
+    description:
+      "A responsive restaurant management application with a clean and user-friendly interface.",
     url: "https://webshubh-restrourant.netlify.app",
     img: Restaurant,
   },
-  
+
   {
     id: 6,
     name: "Ecommerce Website",
+    category: "E-Commerce",
+    description:
+      "A responsive e-commerce website with product browsing and a modern shopping experience.",
     url: "https://ecommerceshubhweb.netlify.app/",
     img: Ecommerce,
+  },
+
+  {
+    id: 7,
+    name: "Typing Speed Test",
+    category: "React Application",
+    description:
+      "An interactive typing test that calculates WPM, CPM and typing accuracy in real time.",
+    url: "https://shubh-typing-speed-text-teal.vercel.app/",
+    img: typingtext,
+  },
+  {
+    id: 8,
+    name: "SP Bricks",
+    category: "Business Website",
+    description:
+      "A modern and responsive business website for a brick manufacturing company, showcasing products, services and company information.",
+    url: "https://sp-bricks.vercel.app/",
+    img: SPBricks,
   },
 ];
 

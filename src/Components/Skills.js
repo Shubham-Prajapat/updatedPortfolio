@@ -49,7 +49,7 @@ const Skills = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2200,
-    arrows: false,
+    arrows: true,
     centerMode: true,
     centerPadding: "0px",
 

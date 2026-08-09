@@ -1396,6 +1396,7 @@ img.logo {
   border: 1px solid rgba(255, 255, 255, 0.06);
   transition: 0.4s;
   backdrop-filter: blur(20px);
+  
 }
 
 .feature-card:hover {
@@ -2933,3 +2934,15 @@ html {
 }  
 
 
+/* Slick Slider Arrows */
+.slick-prev:before,
+.slick-next:before {
+  color: #ffffff !important;
+  font-size: 30px;
+}
+.slick-next{
+  right:0 !important;
+}
+.slick-prev{
+  left:0 !important;
+}
