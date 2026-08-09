@@ -9,7 +9,7 @@ import {
 
 import aboutImg from "../assets/Shubham.jpg";
 import { NavLink, useNavigate } from "react-router-dom";
-import resume from  '../assets/Updatedresume.pdf'
+import resume from  '../assets/resumefrontend.pdf'
 const About = () => {
 
   const navigate = useNavigate()
@@ -97,7 +97,7 @@ const About = () => {
 
             <div className="feature-card">
               <Sparkles size={26} />
-              <h4>Luxury UI/UX</h4>
+              <h4>Luxury UI</h4>
               <p>
                 Premium interfaces with smooth animations and modern aesthetics.
               </p>

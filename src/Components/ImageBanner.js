@@ -1,11 +1,22 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import myimg from "../assets/shubhbg-remove.png";
 import { useNavigate } from "react-router-dom";
+
+const roles = [
+  "Frontend Developer",
+  "Shopify Developer",
+  "React Developer",
+  "Web Developer",
+  "Software Engineer",
+  "UI Designer",
+  ]
 
 const ImageBanner = () => {
 
   const navigate = useNavigate();
+    const [roleIndex, setRoleIndex] = useState(0);
+
 
   const Viewproject = () =>{
     navigate("/projects")
@@ -13,6 +24,16 @@ const ImageBanner = () => {
   const Hire = () =>{
     navigate("/contact")
   }
+
+   // Dynamic role change
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+  
   return (
     <section className="luxury-banner">
       <div className="overlay"></div>
@@ -31,11 +52,26 @@ const ImageBanner = () => {
             Shubham <span>Prajapat</span>
           </h1>
 
-          <h2 className="role-text">Frontend & Shopify Developer</h2>
+          {/* <h2 className="role-text">Frontend & Shopify Developer</h2> */}
+ {/* Dynamic Role */}
+        <div className="role-wrapper">
+          <AnimatePresence mode="wait">
+            <motion.h2
+              key={roles[roleIndex]}
+              className="role-text"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+            >
+              {roles[roleIndex]}
+            </motion.h2>
+          </AnimatePresence>
+        </div>
 
           <p className="description">
-            I create modern, premium and high-performing web experiences using
-            React JS, Shopify and advanced frontend technologies.
+          I build modern, responsive, and high-performing web experiences using React JS, Shopify, JavaScript, and modern frontend technologies — turning ideas into clean, scalable, and user-focused digital experiences.
+
           </p>
 
           <div className="skill-tags">
